@@ -1,16 +1,15 @@
 name: Inputs Demo
-
 on:
-  workflow_dispatch:
-    inputs:
+  workflow_dispatch: # it means manually trigger if prompts for manually actions
+    inputs: # to ask for inputs
       name:
         description: "Enter your Name"
         required: true
-        default: "Devops Engineer"
+        default: "Devops Engineer" # default name shoes this but required true means madatory
       env:
         description: "Select environment (GitHub environment type)"
         required: true
-        type: environment
+        type: environment # already having environment we have to select this shows
       retry_count:
         description: "Number of  retries"
         required: false
@@ -18,11 +17,11 @@ on:
 jobs:
   print_inputs:
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.env }}
+    environment: ${{ github.event.inputs.env }} # select drop down will showes
 
     steps:
       - name: Print Inputs
         run: |
-          echo "Name: ${{ github.event.inputs.name }}"
+          echo "Name: ${{ github.event.inputs.name }}" 
           echo "Environment: ${{ github.event.inputs.env }}"
           echo "Retry Count: ${{ github.event.inputs.retry_count}}"
