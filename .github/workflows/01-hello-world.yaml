@@ -3,7 +3,7 @@ name: Run Tests # The workflow name you see in github actions tab.
 on: [push] # event
 jobs:
   hello: # job name
-    run-on: ubuntu-latest #where to run
+    runs-on: ubuntu-latest #where to run
     steps:
       - name: Print Hello World
         run: echo "Hello, World! 001"
