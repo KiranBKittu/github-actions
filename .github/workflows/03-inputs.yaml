@@ -1,0 +1,28 @@
+name: Inputs Demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Enter your Name"
+        required: true
+        default: "Devops Engineer"
+      env:
+        description: "Select environment (GitHub environment type)"
+        required: true
+        type: environment
+      retry_count:
+        description: "Number of  retries"
+        required: false
+        default: "3"
+jobs:
+  print_inputs:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.env }}
+
+    steps:
+      - name: Print Inputs
+        run: |
+          echo "Name: ${{ github.event.inputs.name }}"
+          echo "Environment: ${{ github.event.inputs.env }}"
+          echo "Retry Count: ${{ github.event.inputs.retry_count}}"

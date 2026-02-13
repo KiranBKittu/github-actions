@@ -5,7 +5,7 @@ on:
       - main
 jobs: # job runs called greet
   greet:
-    runs-on: ubuntu-latest # job run on latest ubuntu 
+    runs-on: ubuntu-latest # job run on latest ubuntu this is github hosted runner
     steps:
       - name: Hello India
         run: echo "Hello India"
