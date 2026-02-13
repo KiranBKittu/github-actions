@@ -1,0 +1,23 @@
+name: Run Tests # The workflow name you see in github actions tab.
+# Trigger workflow on push to main
+on:
+  push: # workflow triggers every time you push code to main branch
+    branches:
+      - main
+jobs: # defines a job called build
+  build:
+    runs-on: ubuntu-latest
+    steps: # steps in the job like pulls your repository code into the runner, installs node.js version 18 runs your tests using npm test
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
