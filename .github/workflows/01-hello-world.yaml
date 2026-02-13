@@ -2,8 +2,8 @@ name: Run Tests # The workflow name you see in github actions tab.
 # Trigger workflow on push to main
 on: [push] # event
 jobs:
-  hello:
-    run-on: ubuntu-latest
+  hello: # job name
+    run-on: ubuntu-latest #where to run
     steps:
       - name: Print Hello World
         run: echo "Hello, World!"
