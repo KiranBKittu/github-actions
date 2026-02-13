@@ -1,0 +1,11 @@
+name: Hello India # work flow name you see in the github actions
+on:
+  push: # on push of github main branch it should act
+    branches:
+      - main
+jobs: # job runs called greet
+  greet:
+    runs-on: ubuntu-latest # job run on latest ubuntu 
+    steps:
+      - name: Hello India
+        run: echo "Hello India"
