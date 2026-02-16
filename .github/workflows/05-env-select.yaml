@@ -1,18 +1,36 @@
-name: Environment Selector workflow
+# name: Environment Selector workflow
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       environment:
+#         description: "Select Environment"
+#         required: true
+#         default: QA
+#         type: choice
+#         options:
+#         - DEV
+#         - PROD
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Show selected env
+#         run: echo "Deployment to ${{ github.event.inputs.environment}}"
+
+name: Test-01
 on:
   workflow_dispatch:
     inputs:
       environment:
-        description: "Select Environment"
+        description: "Select Env"
         required: true
-        default: QA
         type: choice
         options:
-        - DEV
-        - PROD
+          - PROD
+          - DEV
 jobs:
-  deploy:
+  build: 
     runs-on: ubuntu-latest
     steps:
-      - name: Show selected env
-        run: echo "Deployment to ${{ github.event.inputs.environment}}"
+      - name: Test Server
+        run: echo "It is Successful ${{github.event.inputs.environment }}"
