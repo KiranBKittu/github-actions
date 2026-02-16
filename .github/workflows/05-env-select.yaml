@@ -13,4 +13,4 @@ jobs:
   runs-on: ubuntu-latest
   steps:
     - name: Test it
-      run: echo "This is for test ${{ github.event.inputs.evnironments}}"
+      run: echo "This is for test ${{ github.event.inputs.evnironments }}"
