@@ -17,7 +17,7 @@
 #       - name: Show selected env
 #         run: echo "Deployment to ${{ github.event.inputs.environment}}"
 
-name: Test-01
+name: Test Env
 on:
   workflow_dispatch:
     inputs:
