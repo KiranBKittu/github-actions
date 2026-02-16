@@ -6,6 +6,9 @@ on:
         description: Test
         type: choice
         required: true
+        options:
+          - DEV
+          - PROD
 jobs:
   deploy:
     steps:
