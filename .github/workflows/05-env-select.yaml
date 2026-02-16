@@ -2,7 +2,7 @@ name: Environment
 on:
   workflow_dispatch:
     inputs:
-      environment:
+      environments:
         description: Test
         type: choice
         required: true
@@ -11,6 +11,7 @@ on:
           - PROD
 jobs:
   deploy:
+    runs-on: ubuntu-latest
     steps:
       - name: check status
-        run: echo "Just for check in ${{ github.event.inputs.environment }}"
+        run: echo "Just for check in ${{ github.event.inputs.environments }}"
