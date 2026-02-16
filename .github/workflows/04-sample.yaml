@@ -1,18 +1,8 @@
-name: Test1
+name: Test-01
 on: push
 jobs:
-  build:
+  build: 
     runs-on: ubuntu-latest
     steps:
-      - name: say hello
-        run: echo "Hello"
-        
----
-name: Test2
-on: push
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: say hai
-        run: echo "Hai"
+      - name: Test Server
+        run: echo "It is Successful"
