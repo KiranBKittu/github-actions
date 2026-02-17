@@ -1,0 +1,12 @@
+name: github variables
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print default variables
+        run: |
+          echo "Repo: $GITHUB_REPOSITORY"
+          echo "Branch: $GITHUB_REF_NAME"
+          echo "Triggered by: $GITHUB_ACTOR"
+          echo "Run number: $GITHUB_RUN_NUMBER"
