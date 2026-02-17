@@ -1,7 +1,7 @@
 name: github variables
 on: [push]
 jobs:
-  build:
+  build: #Events
     runs-on: ubuntu-latest
     steps:
       - name: Print default variables
